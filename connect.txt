@@ -1,0 +1,48 @@
+#so in this project we set up an
+SSH connection between two Ubuntu containers in Docker we configured SSH
+on the first container and then connect it to it from the second container using the SSH command by completing this
+project with Janet experience working with Docker containers configuring SSH and connecting to remote servers
+
+--------------------------------------------------
+
+docker pull ubuntu
+docker images
+mkdir pro1
+ls
+cd pro1
+pwd
+docker run -it --name container1 ubuntu
+apt-get update
+apt-get install openssh-server
+apt-get install nano
+nano /etc/ssh/sshd_config
+service --status-all
+service ssh start
+
+
+
+docker run -it --name container1 ubuntu
+apt-get update
+apt-get install openssh-client
+y
+exit
+docker exec -it  container1 bash
+docker start container1
+docker exec -it  container1 bash
+passwd root
+123
+123
+exiy
+docker inspect container1 | grep IPAddress
+docker exec -it  container2 bash
+docker start container2
+docker exec -it  container1 bash
+exit
+docker start container1
+docker exec -it  container1 bash
+service --status-all
+service ssh start
+service --status-all
+docker exec -it  container2 bash
+ssh root@192.168.1.3
+
